@@ -1,5 +1,4 @@
-import { motion } from "framer-motion";
-import { ArrowDown, Github, Linkedin, Twitter, Mail } from "lucide-react";
+import { Github, Linkedin, Twitter, Mail } from "lucide-react";
 
 const socials = [
   { icon: Github, href: "#", label: "GitHub" },
@@ -10,107 +9,125 @@ const socials = [
 
 const HeroSection = () => {
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20">
-      {/* Subtle background pattern */}
-      <div className="absolute inset-0 opacity-[0.03]" style={{
+    <section id="home" className="min-h-screen flex items-center relative overflow-hidden pt-20">
+      {/* Colorful decorative blobs */}
+      <div className="absolute top-20 right-[-5%] w-[500px] h-[500px] bg-hero-gradient opacity-15 blob blur-3xl" />
+      <div className="absolute bottom-10 left-[-8%] w-[400px] h-[400px] bg-cool-gradient opacity-15 blob-2 blur-3xl" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-warm-gradient opacity-[0.06] rounded-full blur-3xl" />
+
+      {/* Dot pattern */}
+      <div className="absolute inset-0 opacity-[0.04]" style={{
         backgroundImage: "radial-gradient(circle at 1px 1px, hsl(var(--foreground)) 1px, transparent 0)",
-        backgroundSize: "40px 40px",
+        backgroundSize: "32px 32px",
       }} />
 
       <div className="container mx-auto px-6 relative z-10">
-        <div className="max-w-3xl">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-          >
-            <p className="text-primary font-mono text-sm mb-4 tracking-wider">Hi, my name is</p>
-          </motion.div>
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
+          {/* Left content */}
+          <div>
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-semibold mb-6">
+              <span className="w-2 h-2 rounded-full bg-accent" />
+              Available for work
+            </div>
 
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            className="text-5xl md:text-7xl font-black tracking-tight text-foreground mb-4"
-          >
-            Asad Ullah<span className="text-primary">.</span>
-          </motion.h1>
+            <h1 className="text-5xl md:text-7xl font-display font-bold tracking-tight leading-[1.1] mb-6">
+              Hi, I'm{" "}
+              <span className="text-gradient-hero">Asad</span>
+              <br />
+              <span className="text-gradient-cool">Ullah</span>
+              <span className="text-warm">.</span>
+            </h1>
 
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="text-3xl md:text-5xl font-bold text-muted-foreground mb-6"
-          >
-            I build things for the web.
-          </motion.h2>
+            <p className="text-xl md:text-2xl text-muted-foreground font-medium mb-4">
+              Frontend Developer
+            </p>
 
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-            className="text-lg text-muted-foreground max-w-xl mb-10 leading-relaxed"
-          >
-            A passionate <span className="text-foreground font-medium">Frontend Developer</span> specializing in{" "}
-            <span className="text-primary font-medium">React.js</span> &{" "}
-            <span className="text-primary font-medium">Next.js</span>. I craft pixel-perfect, performant web experiences
-            that users love. Currently turning ideas into elegant, scalable interfaces.
-          </motion.p>
+            <p className="text-base text-muted-foreground max-w-lg mb-8 leading-relaxed">
+              I specialize in <span className="text-primary font-semibold">React.js</span> &{" "}
+              <span className="text-secondary font-semibold">Next.js</span> — crafting pixel-perfect,
+              high-performance web apps that users love. I also work with{" "}
+              <span className="text-rose font-semibold">Laravel</span> to deliver full-stack solutions.
+            </p>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.4 }}
-            className="flex items-center gap-6 mb-12"
-          >
-            <a
-              href="#projects"
-              className="bg-primary text-primary-foreground px-8 py-3 rounded-lg font-semibold text-sm hover:opacity-90 transition-opacity"
-            >
-              View My Work
-            </a>
-            <a
-              href="#contact"
-              className="border border-primary text-primary px-8 py-3 rounded-lg font-semibold text-sm hover:bg-primary/5 transition-colors"
-            >
-              Get In Touch
-            </a>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.5, delay: 0.5 }}
-            className="flex items-center gap-5"
-          >
-            {socials.map((social) => (
+            <div className="flex flex-wrap items-center gap-4 mb-10">
               <a
-                key={social.label}
-                href={social.href}
-                aria-label={social.label}
-                className="text-muted-foreground hover:text-primary transition-colors"
+                href="#projects"
+                className="bg-hero-gradient text-primary-foreground px-8 py-3.5 rounded-full font-semibold text-sm hover:shadow-xl hover:shadow-primary/20 transition-shadow"
               >
-                <social.icon size={20} />
+                View My Work →
               </a>
-            ))}
-          </motion.div>
+              <a
+                href="#contact"
+                className="glass px-8 py-3.5 rounded-full font-semibold text-sm text-foreground hover:shadow-lg transition-shadow"
+              >
+                Get In Touch
+              </a>
+            </div>
+
+            <div className="flex items-center gap-4">
+              {socials.map((social) => (
+                <a
+                  key={social.label}
+                  href={social.href}
+                  aria-label={social.label}
+                  className="w-10 h-10 rounded-full bg-muted flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-primary/10 transition-colors"
+                >
+                  <social.icon size={18} />
+                </a>
+              ))}
+            </div>
+          </div>
+
+          {/* Right - creative visual card */}
+          <div className="hidden lg:block relative">
+            <div className="relative w-full aspect-square max-w-md mx-auto">
+              {/* Decorative elements */}
+              <div className="absolute inset-4 bg-hero-gradient rounded-3xl rotate-6 opacity-20" />
+              <div className="absolute inset-4 bg-cool-gradient rounded-3xl -rotate-3 opacity-15" />
+
+              {/* Main card */}
+              <div className="relative glass rounded-3xl p-8 h-full flex flex-col justify-between">
+                <div>
+                  <div className="flex gap-2 mb-8">
+                    <div className="w-3 h-3 rounded-full bg-rose" />
+                    <div className="w-3 h-3 rounded-full bg-warm" />
+                    <div className="w-3 h-3 rounded-full bg-accent" />
+                  </div>
+                  <pre className="font-mono text-sm leading-loose text-muted-foreground">
+                    <code>
+                      <span className="text-secondary">const</span>{" "}
+                      <span className="text-primary">developer</span> = {"{\n"}
+                      {"  "}name: <span className="text-accent">"Asad Ullah"</span>,{"\n"}
+                      {"  "}role: <span className="text-accent">"Frontend Dev"</span>,{"\n"}
+                      {"  "}skills: [
+                      {"\n    "}
+                      <span className="text-rose">"React"</span>,{" "}
+                      <span className="text-warm">"Next.js"</span>,
+                      {"\n    "}
+                      <span className="text-primary">"Laravel"</span>,{" "}
+                      <span className="text-cyan">"TypeScript"</span>
+                      {"\n  "}],{"\n"}
+                      {"  "}passion: <span className="text-accent">"Building web"</span>,{"\n"}
+                      {"  "}coffee: <span className="text-warm">true</span>{"\n"}
+                      {"}"};
+                    </code>
+                  </pre>
+                </div>
+
+                <div className="flex items-center gap-3 pt-6 border-t border-border">
+                  <div className="w-10 h-10 rounded-full bg-hero-gradient flex items-center justify-center text-primary-foreground font-display font-bold text-sm">
+                    AU
+                  </div>
+                  <div>
+                    <p className="text-sm font-semibold text-foreground">Asad Ullah</p>
+                    <p className="text-xs text-muted-foreground">React • Next.js • Laravel</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-
-      {/* Scroll indicator */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2"
-      >
-        <motion.div
-          animate={{ y: [0, 8, 0] }}
-          transition={{ repeat: Infinity, duration: 2 }}
-        >
-          <ArrowDown size={20} className="text-muted-foreground" />
-        </motion.div>
-      </motion.div>
     </section>
   );
 };
