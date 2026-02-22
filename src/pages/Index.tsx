@@ -8,7 +8,7 @@ import Footer from "@/components/portfolio/Footer";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background scroll-smooth">
       <Navbar />
       <HeroSection />
       <AboutSection />

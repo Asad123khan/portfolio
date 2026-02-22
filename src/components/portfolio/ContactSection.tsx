@@ -1,50 +1,97 @@
-import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
-import { Mail, MapPin, Send } from "lucide-react";
+import { Mail, MapPin, Send, Phone } from "lucide-react";
 
 const ContactSection = () => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
-
   return (
-    <section id="contact" className="py-24">
-      <div className="container mx-auto px-6" ref={ref}>
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
-          className="max-w-2xl mx-auto text-center"
-        >
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-2">
-            Get In <span className="text-primary">Touch</span>
-          </h2>
-          <div className="w-16 h-1 bg-primary rounded-full mb-6 mx-auto" />
+    <section id="contact" className="py-28 section-alt relative overflow-hidden">
+      <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-hero-gradient opacity-[0.08] blob blur-3xl" />
 
-          <p className="text-muted-foreground mb-10 leading-relaxed">
-            I'm currently open to new opportunities and collaborations. Whether you have a project
-            in mind, a question, or just want to say hi — my inbox is always open.
-          </p>
-
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
-            <div className="flex items-center gap-2 text-sm text-muted-foreground">
-              <Mail size={16} className="text-primary" />
-              <span>asad@example.com</span>
+      <div className="container mx-auto px-6 relative z-10">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-12">
+            <div className="flex items-center justify-center gap-3 mb-3">
+              <div className="h-1 w-12 bg-hero-gradient rounded-full" />
+              <span className="text-sm font-semibold text-primary uppercase tracking-widest">Contact</span>
+              <div className="h-1 w-12 bg-hero-gradient rounded-full" />
             </div>
-            <div className="hidden sm:block w-1 h-1 rounded-full bg-border" />
-            <div className="flex items-center gap-2 text-sm text-muted-foreground">
-              <MapPin size={16} className="text-primary" />
-              <span>Pakistan</span>
-            </div>
+            <h2 className="text-4xl md:text-5xl font-display font-bold text-foreground mb-4">
+              Let's <span className="text-gradient-hero">work together</span>
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-lg mx-auto">
+              Got a project in mind? I'd love to hear about it. Drop me a message and let's create something amazing.
+            </p>
           </div>
 
-          <a
-            href="mailto:asad@example.com"
-            className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-8 py-3 rounded-lg font-semibold text-sm hover:opacity-90 transition-opacity"
-          >
-            <Send size={16} />
-            Say Hello
-          </a>
-        </motion.div>
+          <div className="grid md:grid-cols-2 gap-8">
+            {/* Contact Info */}
+            <div className="space-y-6">
+              <div className="rounded-2xl bg-dark-gradient p-8 text-primary-foreground">
+                <h3 className="text-xl font-display font-bold mb-6">Get in touch</h3>
+                <div className="space-y-5">
+                  <div className="flex items-center gap-4">
+                    <div className="w-10 h-10 rounded-xl bg-primary/20 flex items-center justify-center shrink-0">
+                      <Mail size={18} />
+                    </div>
+                    <div>
+                      <p className="text-xs text-primary-foreground/60 mb-0.5">Email</p>
+                      <p className="text-sm font-medium">asad@example.com</p>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-4">
+                    <div className="w-10 h-10 rounded-xl bg-accent/20 flex items-center justify-center shrink-0">
+                      <Phone size={18} />
+                    </div>
+                    <div>
+                      <p className="text-xs text-primary-foreground/60 mb-0.5">Phone</p>
+                      <p className="text-sm font-medium">+92 XXX XXXXXXX</p>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-4">
+                    <div className="w-10 h-10 rounded-xl bg-secondary/20 flex items-center justify-center shrink-0">
+                      <MapPin size={18} />
+                    </div>
+                    <div>
+                      <p className="text-xs text-primary-foreground/60 mb-0.5">Location</p>
+                      <p className="text-sm font-medium">Pakistan</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Contact Form */}
+            <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
+              <div className="grid grid-cols-2 gap-4">
+                <input
+                  type="text"
+                  placeholder="Your Name"
+                  className="w-full px-5 py-3.5 rounded-xl bg-card border border-border text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all"
+                />
+                <input
+                  type="email"
+                  placeholder="Your Email"
+                  className="w-full px-5 py-3.5 rounded-xl bg-card border border-border text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all"
+                />
+              </div>
+              <input
+                type="text"
+                placeholder="Subject"
+                className="w-full px-5 py-3.5 rounded-xl bg-card border border-border text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all"
+              />
+              <textarea
+                rows={5}
+                placeholder="Your Message..."
+                className="w-full px-5 py-3.5 rounded-xl bg-card border border-border text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all resize-none"
+              />
+              <button
+                type="submit"
+                className="w-full bg-hero-gradient text-primary-foreground px-8 py-3.5 rounded-xl font-semibold text-sm hover:shadow-xl hover:shadow-primary/20 transition-shadow flex items-center justify-center gap-2"
+              >
+                <Send size={16} />
+                Send Message
+              </button>
+            </form>
+          </div>
+        </div>
       </div>
     </section>
   );
