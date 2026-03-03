@@ -1,11 +1,5 @@
 import { AtSign, Github, Linkedin } from "lucide-react";
 
-const navItems = [
-  { label: "About me", href: "#about" },
-  { label: "Skills", href: "#skills" },
-  { label: "Portfolio", href: "#projects" },
-];
-
 const socials = [
   { icon: AtSign, href: "mailto:asadullahkhan814@gmail.com", label: "Email" },
   { icon: Github, href: "https://github.com/Asad123khan", label: "GitHub" },
@@ -23,46 +17,8 @@ const HeroSection = () => {
         style={{ clipPath: "polygon(0 0, 78% 0, 65% 100%, 0 100%)" }}
       />
 
-      <div className="relative z-10 min-h-[100svh] px-4 sm:px-6 lg:px-12">
-        <div className="mx-auto flex min-h-[100svh] w-full max-w-[1200px] flex-col justify-between py-5 sm:py-7 lg:py-8">
-          <div className="flex items-center justify-between">
-            <a href="#home" className="text-xl font-display font-bold tracking-tight text-foreground sm:text-2xl lg:text-3xl">
-              AU
-            </a>
-
-            <nav className="hidden items-center gap-6 text-sm font-semibold text-background lg:gap-10 md:flex">
-              {navItems.map((item) => (
-                <a key={item.href} href={item.href} className="transition-opacity hover:opacity-80">
-                  {item.label}
-                </a>
-              ))}
-              <a
-                href="#contact"
-                className="rounded-full bg-background px-6 py-2.5 text-xs font-bold uppercase tracking-wide text-foreground"
-              >
-                Contact me
-              </a>
-            </nav>
-          </div>
-
-          <nav className="mt-5 flex flex-wrap items-center gap-2 text-xs font-semibold text-foreground md:hidden">
-            {navItems.map((item) => (
-              <a
-                key={item.href}
-                href={item.href}
-                className="rounded-full bg-background/60 px-3 py-1.5 transition-opacity hover:opacity-80"
-              >
-                {item.label}
-              </a>
-            ))}
-            <a
-              href="#contact"
-              className="rounded-full bg-foreground px-3 py-1.5 text-xs font-bold uppercase tracking-wide text-background"
-            >
-              Contact
-            </a>
-          </nav>
-
+      <div className="relative z-10 min-h-[100svh] px-4 pt-20 sm:px-6 sm:pt-24 lg:px-12 lg:pt-24">
+        <div className="mx-auto flex min-h-[100svh] w-full max-w-[1200px] flex-col justify-center py-5 sm:py-7 lg:py-8">
           <div className="grid items-center gap-8 pb-6 pt-8 sm:gap-10 sm:pt-10 md:grid-cols-2 lg:gap-8 lg:pb-0 lg:pt-0">
             <div className="max-w-xl self-center lg:pb-16">
               <p className="mb-3 text-2xl font-semibold text-foreground sm:mb-4 sm:text-3xl lg:mb-6 lg:text-5xl">Hi, I am</p>
