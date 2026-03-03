@@ -2,29 +2,29 @@ import { Mail, MapPin, Send, Phone } from "lucide-react";
 
 const ContactSection = () => {
   return (
-    <section id="contact" className="py-28 section-alt relative overflow-hidden">
-      <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-hero-gradient opacity-[0.08] blob blur-3xl" />
+    <section id="contact" className="section-alt relative overflow-hidden py-16 sm:py-20 lg:py-28">
+      <div className="absolute bottom-0 right-0 hidden h-[280px] w-[280px] bg-hero-gradient opacity-[0.08] blur-2xl sm:block lg:h-[400px] lg:w-[400px] lg:blur-3xl blob" />
 
-      <div className="container mx-auto px-6 relative z-10">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-12">
+      <div className="container relative z-10 mx-auto px-4 sm:px-6">
+        <div className="mx-auto max-w-4xl">
+          <div className="mb-8 text-center sm:mb-10 lg:mb-12">
             <div className="flex items-center justify-center gap-3 mb-3">
               <div className="h-1 w-12 bg-hero-gradient rounded-full" />
               <span className="text-sm font-semibold text-primary uppercase tracking-widest">Contact</span>
               <div className="h-1 w-12 bg-hero-gradient rounded-full" />
             </div>
-            <h2 className="text-4xl md:text-5xl font-display font-bold text-foreground mb-4">
+            <h2 className="mb-4 text-3xl font-display font-bold text-foreground sm:text-4xl md:text-5xl">
               Let's <span className="text-gradient-hero">work together</span>
             </h2>
-            <p className="text-lg text-muted-foreground max-w-lg mx-auto">
-              Got a project in mind? I'd love to hear about it. Drop me a message and let's create something amazing.
+            <p className="mx-auto max-w-lg text-base text-muted-foreground sm:text-lg">
+              Looking for a frontend engineer for React/Next.js projects? Let's connect and discuss your product goals.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid gap-6 sm:gap-8 md:grid-cols-2">
             {/* Contact Info */}
             <div className="space-y-6">
-              <div className="rounded-2xl bg-dark-gradient p-8 text-primary-foreground">
+              <div className="rounded-2xl bg-dark-gradient p-5 text-primary-foreground sm:p-6 lg:p-8">
                 <h3 className="text-xl font-display font-bold mb-6">Get in touch</h3>
                 <div className="space-y-5">
                   <div className="flex items-center gap-4">
@@ -33,7 +33,7 @@ const ContactSection = () => {
                     </div>
                     <div>
                       <p className="text-xs text-primary-foreground/60 mb-0.5">Email</p>
-                      <p className="text-sm font-medium">asad@example.com</p>
+                      <p className="break-all text-sm font-medium">asadullahkhan814@gmail.com</p>
                     </div>
                   </div>
                   <div className="flex items-center gap-4">
@@ -42,7 +42,7 @@ const ContactSection = () => {
                     </div>
                     <div>
                       <p className="text-xs text-primary-foreground/60 mb-0.5">Phone</p>
-                      <p className="text-sm font-medium">+92 XXX XXXXXXX</p>
+                      <p className="text-sm font-medium">0346 9104124</p>
                     </div>
                   </div>
                   <div className="flex items-center gap-4">
@@ -51,7 +51,7 @@ const ContactSection = () => {
                     </div>
                     <div>
                       <p className="text-xs text-primary-foreground/60 mb-0.5">Location</p>
-                      <p className="text-sm font-medium">Pakistan</p>
+                      <p className="text-sm font-medium">Lahore, Pakistan</p>
                     </div>
                   </div>
                 </div>
@@ -60,7 +60,7 @@ const ContactSection = () => {
 
             {/* Contact Form */}
             <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                 <input
                   type="text"
                   placeholder="Your Name"

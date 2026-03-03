@@ -18,4 +18,38 @@ export default defineConfig(({ mode }) => ({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  build: {
+    minify: "esbuild",
+    cssMinify: true,
+    cssCodeSplit: true,
+    sourcemap: false,
+    rollupOptions: {
+      treeshake: true,
+      output: {
+        manualChunks(id) {
+          if (!id.includes("node_modules")) {
+            return;
+          }
+
+          if (id.includes("react") || id.includes("scheduler")) {
+            return "react-vendor";
+          }
+
+          if (id.includes("react-router")) {
+            return "router-vendor";
+          }
+
+          if (id.includes("@radix-ui") || id.includes("class-variance-authority") || id.includes("clsx")) {
+            return "ui-vendor";
+          }
+
+          if (id.includes("lucide-react")) {
+            return "icons-vendor";
+          }
+
+          return "vendor";
+        },
+      },
+    },
+  },
 }));

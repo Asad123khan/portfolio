@@ -1,23 +1,22 @@
-import { Github, Linkedin, Twitter, Mail, Heart } from "lucide-react";
+import { Github, Linkedin, Mail, Heart } from "lucide-react";
 
 const socials = [
-  { icon: Github, href: "#", label: "GitHub" },
-  { icon: Linkedin, href: "#", label: "LinkedIn" },
-  { icon: Twitter, href: "#", label: "Twitter" },
-  { icon: Mail, href: "mailto:asad@example.com", label: "Email" },
+  { icon: Github, href: "https://github.com/Asad123khan", label: "GitHub" },
+  { icon: Linkedin, href: "https://www.linkedin.com/in/asad-ullah-b64976ba", label: "LinkedIn" },
+  { icon: Mail, href: "mailto:asadullahkhan814@gmail.com", label: "Email" },
 ];
 
 const Footer = () => {
   return (
-    <footer className="py-10 border-t border-border">
-      <div className="container mx-auto px-6">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+    <footer className="border-t border-border py-8 sm:py-10">
+      <div className="container mx-auto px-4 sm:px-6">
+        <div className="flex flex-col items-center justify-between gap-5 text-center md:flex-row md:gap-6 md:text-left">
           <a href="#home" className="text-xl font-display font-bold">
             <span className="text-gradient-hero">Asad</span>
             <span className="text-foreground">.</span>
           </a>
 
-          <p className="text-sm text-muted-foreground flex items-center gap-1">
+          <p className="flex flex-wrap items-center justify-center gap-1 text-sm text-muted-foreground md:justify-start">
             Built with <Heart size={14} className="text-rose fill-rose" /> by Asad Ullah © {new Date().getFullYear()}
           </p>
 

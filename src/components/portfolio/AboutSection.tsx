@@ -2,9 +2,9 @@ import { Code2, Layers, Zap, Palette } from "lucide-react";
 
 const highlights = [
   { icon: Code2, title: "Clean Architecture", desc: "Scalable, maintainable code that stands the test of time.", color: "primary" },
-  { icon: Layers, title: "Full Stack Ready", desc: "Frontend mastery with solid backend skills in Laravel.", color: "secondary" },
+  { icon: Layers, title: "Frontend Focus", desc: "Production-ready React and Next.js interfaces with strong component architecture.", color: "secondary" },
   { icon: Zap, title: "Performance First", desc: "Lightning-fast experiences optimized for every device.", color: "warm" },
-  { icon: Palette, title: "Design Eye", desc: "Pixel-perfect implementation bridging design and code.", color: "accent" },
+  { icon: Palette, title: "UI Consistency", desc: "Responsive, accessible, and user-centric interfaces across browsers and devices.", color: "accent" },
 ];
 
 const colorMap: Record<string, string> = {
@@ -23,55 +23,53 @@ const borderMap: Record<string, string> = {
 
 const AboutSection = () => {
   return (
-    <section id="about" className="py-28 relative overflow-hidden">
+    <section id="about" className="relative overflow-hidden py-16 sm:py-20 lg:py-28">
       {/* Background accent */}
-      <div className="absolute top-0 right-0 w-[300px] h-[300px] bg-mixed-gradient opacity-10 blob blur-3xl" />
+      <div className="absolute right-0 top-0 hidden h-[260px] w-[260px] bg-mixed-gradient opacity-10 blur-2xl sm:block lg:h-[300px] lg:w-[300px] lg:blur-3xl blob" />
 
-      <div className="container mx-auto px-6 relative z-10">
+      <div className="container relative z-10 mx-auto px-4 sm:px-6">
         <div className="flex items-center gap-3 mb-3">
           <div className="h-1 w-12 bg-hero-gradient rounded-full" />
           <span className="text-sm font-semibold text-primary uppercase tracking-widest">About Me</span>
         </div>
-        <h2 className="text-4xl md:text-5xl font-display font-bold text-foreground mb-12">
+        <h2 className="mb-8 text-3xl font-display font-bold text-foreground sm:mb-10 sm:text-4xl md:text-5xl lg:mb-12">
           Passionate about<br />
           <span className="text-gradient-hero">building the web</span>
         </h2>
 
-        <div className="grid lg:grid-cols-5 gap-12">
+        <div className="grid gap-8 lg:grid-cols-5 lg:gap-12">
           <div className="lg:col-span-3 space-y-5">
-            <p className="text-lg text-muted-foreground leading-relaxed">
-              I'm <span className="text-foreground font-semibold">Asad Ullah</span>, a frontend developer
-              with a deep passion for creating beautiful and functional web applications. With expertise in
-              modern JavaScript frameworks, I turn complex requirements into elegant solutions.
+            <p className="text-base leading-relaxed text-muted-foreground sm:text-lg">
+              I'm <span className="text-foreground font-semibold">Asad Ullah</span>, a frontend engineer with 3+ years of
+              professional experience building production-ready web applications using React.js and Next.js.
+              I focus on scalable UI architecture, performance, and maintainable code.
             </p>
-            <p className="text-lg text-muted-foreground leading-relaxed">
-              My toolkit spans from <span className="text-primary font-semibold">React.js</span> and{" "}
-              <span className="text-secondary font-semibold">Next.js</span> on the frontend to{" "}
-              <span className="text-rose font-semibold">Laravel</span> on the backend. I believe in writing
-              code that's not just functional — but a joy to read and maintain.
+            <p className="text-base leading-relaxed text-muted-foreground sm:text-lg">
+              I’ve delivered travel, financial, and e-commerce platforms, collaborating closely with backend teams,
+              integrating REST APIs, and shipping real-world features for active users. My experience includes improving
+              Lighthouse performance scores from 65 to 90+ and reducing frontend error rates in API handling.
             </p>
-            <p className="text-lg text-muted-foreground leading-relaxed">
-              When I'm not coding, I'm exploring new technologies, contributing to open-source projects,
-              and constantly pushing myself to grow as a developer. My mission? Building digital products
-              that make real impact.
+            <p className="text-base leading-relaxed text-muted-foreground sm:text-lg">
+              I specialize in frontend technologies and templating workflows, including Laravel Blade for UI rendering,
+              while keeping my core focus on modern frontend engineering with clean, responsive, and accessible interfaces.
             </p>
 
             {/* Stats row */}
-            <div className="flex flex-wrap gap-6 pt-6">
+            <div className="flex flex-wrap gap-4 pt-4 sm:gap-6 sm:pt-6">
               {[
-                { num: "2+", label: "Years Experience", color: "text-gradient-hero" },
-                { num: "20+", label: "Projects Done", color: "text-gradient-cool" },
-                { num: "15+", label: "Happy Clients", color: "text-gradient-warm" },
+                { num: "3+", label: "Years Experience", color: "text-gradient-hero" },
+                { num: "90+", label: "Lighthouse Score", color: "text-gradient-cool" },
+                { num: "35%", label: "Page Speed Boost", color: "text-gradient-warm" },
               ].map((stat) => (
-                <div key={stat.label} className="text-center">
-                  <p className={`text-3xl font-display font-bold ${stat.color}`}>{stat.num}</p>
+                <div key={stat.label} className="min-w-[90px] text-center">
+                  <p className={`text-2xl font-display font-bold sm:text-3xl ${stat.color}`}>{stat.num}</p>
                   <p className="text-xs text-muted-foreground mt-1">{stat.label}</p>
                 </div>
               ))}
             </div>
           </div>
 
-          <div className="lg:col-span-2 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-4">
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:col-span-2 lg:grid-cols-1">
             {highlights.map((item) => (
               <div
                 key={item.title}

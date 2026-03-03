@@ -1,21 +1,23 @@
-import Navbar from "@/components/portfolio/Navbar";
+import { Suspense, lazy } from "react";
 import HeroSection from "@/components/portfolio/HeroSection";
-import AboutSection from "@/components/portfolio/AboutSection";
-import SkillsSection from "@/components/portfolio/SkillsSection";
-import ProjectsSection from "@/components/portfolio/ProjectsSection";
-import ContactSection from "@/components/portfolio/ContactSection";
-import Footer from "@/components/portfolio/Footer";
+
+const AboutSection = lazy(() => import("@/components/portfolio/AboutSection"));
+const SkillsSection = lazy(() => import("@/components/portfolio/SkillsSection"));
+const ProjectsSection = lazy(() => import("@/components/portfolio/ProjectsSection"));
+const ContactSection = lazy(() => import("@/components/portfolio/ContactSection"));
+const Footer = lazy(() => import("@/components/portfolio/Footer"));
 
 const Index = () => {
   return (
     <div className="min-h-screen bg-background scroll-smooth">
-      <Navbar />
       <HeroSection />
-      <AboutSection />
-      <SkillsSection />
-      <ProjectsSection />
-      <ContactSection />
-      <Footer />
+      <Suspense fallback={null}>
+        <AboutSection />
+        <SkillsSection />
+        <ProjectsSection />
+        <ContactSection />
+        <Footer />
+      </Suspense>
     </div>
   );
 };
