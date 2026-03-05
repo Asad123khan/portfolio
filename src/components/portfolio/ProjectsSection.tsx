@@ -29,6 +29,7 @@ const projects: Project[] = [
     description:
       "Built complete frontend for Touraz Travels and Wings Travels, including public websites and admin dashboards with dynamic routing and smooth booking experiences.",
     tags: ["Next.js", "React", "JavaScript", "SCSS", "Bootstrap", "REST API"],
+   github: "https://github.com/Asad123khan/Client-Projects-Showcase",
     image: tourazImage,
     gradient: "bg-hero-gradient",
     tagColor: "text-primary",
@@ -40,6 +41,7 @@ const projects: Project[] = [
     description:
       "Developed full e-commerce frontend with product listings, cart workflows, dynamic product pages, and admin dashboard screens in a production-ready architecture.",
     tags: ["Next.js", "React", "JavaScript", "CSS/SCSS", "Bootstrap", "Responsive UI"],
+    github: "https://github.com/Asad123khan/Client-Projects-Showcase",
     image: mytechworth,
     gradient: "bg-cool-gradient",
     tagColor: "text-cyan",
@@ -51,6 +53,7 @@ const projects: Project[] = [
     description:
       "Designed and implemented secure, responsive frontend interfaces that improved user engagement through stronger UI structure and usability.",
     tags: ["HTML5", "CSS3", "JavaScript", "jQuery", "Laravel Blade"],
+    github: "https://github.com/Asad123khan/Client-Projects-Showcase",
     image: awnFinance,
     gradient: "bg-warm-gradient",
     tagColor: "text-warm",
@@ -62,6 +65,7 @@ const projects: Project[] = [
     description:
       "Created a role-based dashboard for event operations with ticket inventory tracking, organizer tools, and streamlined management workflows.",
     tags: ["React", "TypeScript", "Tailwind CSS", "REST API", "Dashboard UI"],
+    github: "https://github.com/Asad123khan/Client-Projects-Showcase",
     image: ticketPool,
     gradient: "bg-cool-gradient",
     tagColor: "text-cyan",
@@ -73,6 +77,7 @@ const projects: Project[] = [
     description:
       "Implemented a modern property platform UI for listings, inquiries, and detail-rich property pages optimized for mobile and desktop browsing.",
     tags: ["Next.js", "React", "SCSS", "Responsive UI", "SEO Pages"],
+    github: "https://github.com/Asad123khan/Client-Projects-Showcase",
     image: qeemahProperty,
     gradient: "bg-hero-gradient",
     tagColor: "text-primary",
@@ -84,6 +89,7 @@ const projects: Project[] = [
     description:
       "Delivered a high-conversion marketing and product experience for a fintech brand with reusable UI sections and consistent visual storytelling.",
     tags: ["Next.js", "React", "Animation", "Responsive UI", "Landing Pages"],
+    github: "https://github.com/Asad123khan/Client-Projects-Showcase",
     image: sullis,
     gradient: "bg-warm-gradient",
     tagColor: "text-warm",
@@ -95,6 +101,7 @@ const projects: Project[] = [
     description:
       "Built a centralized vendor operations interface covering onboarding, status tracking, and performance views to simplify team workflows.",
     tags: ["React", "TypeScript", "Tailwind CSS", "Tables", "Form UX"],
+    github: "https://github.com/Asad123khan/Client-Projects-Showcase",
     image: youmiTech,
     gradient: "bg-cool-gradient",
     tagColor: "text-cyan",
