@@ -13,7 +13,7 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 glass">
+    <nav className="fixed top-0 left-0 right-0 z-50 glass" data-aos="fade-down">
       <div className="container mx-auto px-6 py-4 flex items-center justify-between">
         <a href="#home" className="text-2xl font-display font-bold tracking-tight">
           <span className="text-gradient-hero">Asad</span>
@@ -51,7 +51,7 @@ const Navbar = () => {
       </div>
 
       {isOpen && (
-        <div className="md:hidden glass border-t border-border">
+        <div className="md:hidden glass border-t border-border" data-aos="fade-down" data-aos-duration="450">
           <ul className="flex flex-col items-center gap-2 py-6">
             {navItems.map((item) => (
               <li key={item.href}>

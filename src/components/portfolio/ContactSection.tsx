@@ -68,15 +68,15 @@ const ContactSection = () => {
       <div className="container relative z-10 mx-auto px-4 sm:px-6">
         <div className="mx-auto max-w-4xl">
           <div className="mb-8 text-center sm:mb-10 lg:mb-12">
-            <div className="flex items-center justify-center gap-3 mb-3">
+            <div className="flex items-center justify-center gap-3 mb-3" data-aos="fade-up">
               <div className="h-1 w-12 bg-hero-gradient rounded-full" />
               <span className="text-sm font-semibold text-primary uppercase tracking-widest">Contact</span>
               <div className="h-1 w-12 bg-hero-gradient rounded-full" />
             </div>
-            <h2 className="mb-4 text-3xl font-display font-bold text-foreground sm:text-4xl md:text-5xl">
+            <h2 className="mb-4 text-3xl font-display font-bold text-foreground sm:text-4xl md:text-5xl" data-aos="fade-up" data-aos-delay="90">
               Let's <span className="text-gradient-hero">work together</span>
             </h2>
-            <p className="mx-auto max-w-lg text-base text-muted-foreground sm:text-lg">
+            <p className="mx-auto max-w-lg text-base text-muted-foreground sm:text-lg" data-aos="fade-up" data-aos-delay="140">
               Looking for a frontend engineer for React/Next.js projects? Let's connect and discuss your product goals.
             </p>
           </div>
@@ -84,7 +84,7 @@ const ContactSection = () => {
           <div className="grid gap-6 sm:gap-8 md:grid-cols-2">
             {/* Contact Info */}
             <div className="space-y-6">
-              <div className="rounded-2xl bg-dark-gradient p-5 text-primary-foreground sm:p-6 lg:p-8">
+              <div className="rounded-2xl bg-dark-gradient p-5 text-primary-foreground sm:p-6 lg:p-8" data-aos="fade-right" data-aos-delay="140">
                 <h3 className="text-xl font-display font-bold mb-6">Get in touch</h3>
                 <div className="space-y-5">
                   <div className="flex items-center gap-4">
@@ -119,7 +119,7 @@ const ContactSection = () => {
             </div>
 
             {/* Contact Form */}
-            <form className="space-y-4" onSubmit={handleSubmit}>
+            <form className="space-y-4" onSubmit={handleSubmit} data-aos="fade-left" data-aos-delay="180">
               <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                 <input
                   type="text"

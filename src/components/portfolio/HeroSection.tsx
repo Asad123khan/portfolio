@@ -20,7 +20,7 @@ const HeroSection = () => {
       <div className="relative z-10 min-h-[100svh] px-4 pt-20 sm:px-6 sm:pt-24 lg:px-12 lg:pt-24">
         <div className="mx-auto flex min-h-[100svh] w-full max-w-[1200px] flex-col justify-center py-5 sm:py-7 lg:py-8">
           <div className="grid items-center gap-8 pb-6 pt-8 sm:gap-10 sm:pt-10 md:grid-cols-2 lg:gap-8 lg:pb-0 lg:pt-0">
-            <div className="max-w-xl self-center lg:pb-16">
+            <div className="max-w-xl self-center lg:pb-16" data-aos="fade-right" data-aos-delay="80">
               <p className="mb-3 text-2xl font-semibold text-foreground sm:mb-4 sm:text-3xl lg:mb-6 lg:text-5xl">Hi, I am</p>
               <h1 className="text-4xl font-bold leading-tight text-foreground sm:text-5xl lg:text-7xl">Asad Ullah</h1>
               <p className="mt-2 text-base font-semibold text-muted-foreground sm:mt-3 sm:text-md lg:text-2xl">
@@ -28,12 +28,14 @@ const HeroSection = () => {
               </p>
 
               <div className="mt-7 flex items-center gap-3 sm:mt-10 sm:gap-4 lg:mt-12">
-                {socials.map((social) => (
+                {socials.map((social, index) => (
                   <a
                     key={social.label}
                     href={social.href}
                     aria-label={social.label}
                     className="flex h-10 w-10 items-center justify-center rounded bg-background/50 text-foreground transition-colors hover:bg-background sm:h-11 sm:w-11"
+                    data-aos="zoom-in"
+                    data-aos-delay={180 + index * 90}
                   >
                     <social.icon size={18} />
                   </a>
@@ -41,7 +43,7 @@ const HeroSection = () => {
               </div>
             </div>
 
-            <div className="relative mx-auto h-[300px] w-full max-w-[320px] sm:h-[360px] sm:max-w-[380px] lg:h-full lg:min-h-[520px] lg:max-w-none">
+            <div className="relative mx-auto h-[300px] w-full max-w-[320px] sm:h-[360px] sm:max-w-[380px] lg:h-full lg:min-h-[520px] lg:max-w-none" data-aos="fade-left" data-aos-delay="130">
               <img
                 src="/profile-768.webp"
                 srcSet="/profile-420.webp 420w, /profile-768.webp 768w, /profile-1200.webp 1200w"

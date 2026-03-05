@@ -28,17 +28,17 @@ const AboutSection = () => {
       <div className="absolute right-0 top-0 hidden h-[260px] w-[260px] bg-mixed-gradient opacity-10 blur-2xl sm:block lg:h-[300px] lg:w-[300px] lg:blur-3xl blob" />
 
       <div className="container relative z-10 mx-auto px-4 sm:px-6">
-        <div className="flex items-center gap-3 mb-3">
+        <div className="flex items-center gap-3 mb-3" data-aos="fade-right">
           <div className="h-1 w-12 bg-hero-gradient rounded-full" />
           <span className="text-sm font-semibold text-primary uppercase tracking-widest">About Me</span>
         </div>
-        <h2 className="mb-8 text-3xl font-display font-bold text-foreground sm:mb-10 sm:text-4xl md:text-5xl lg:mb-12">
+        <h2 className="mb-8 text-3xl font-display font-bold text-foreground sm:mb-10 sm:text-4xl md:text-5xl lg:mb-12" data-aos="fade-up" data-aos-delay="80">
           Passionate about<br />
           <span className="text-gradient-hero">building the web</span>
         </h2>
 
         <div className="grid gap-8 lg:grid-cols-5 lg:gap-12">
-          <div className="lg:col-span-3 space-y-5">
+          <div className="lg:col-span-3 space-y-5" data-aos="fade-up" data-aos-delay="120">
             <p className="text-base leading-relaxed text-muted-foreground sm:text-lg">
               I'm <span className="text-foreground font-semibold">Asad Ullah</span>, a frontend engineer with 3+ years of
               professional experience building production-ready web applications using React.js and Next.js.
@@ -60,8 +60,8 @@ const AboutSection = () => {
                 { num: "3+", label: "Years Experience", color: "text-gradient-hero" },
                 { num: "90+", label: "Lighthouse Score", color: "text-gradient-cool" },
                 { num: "35%", label: "Page Speed Boost", color: "text-gradient-warm" },
-              ].map((stat) => (
-                <div key={stat.label} className="min-w-[90px] text-center">
+              ].map((stat, index) => (
+                <div key={stat.label} className="min-w-[90px] text-center" data-aos="zoom-in" data-aos-delay={190 + index * 80}>
                   <p className={`text-2xl font-display font-bold sm:text-3xl ${stat.color}`}>{stat.num}</p>
                   <p className="text-xs text-muted-foreground mt-1">{stat.label}</p>
                 </div>
@@ -70,10 +70,12 @@ const AboutSection = () => {
           </div>
 
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:col-span-2 lg:grid-cols-1">
-            {highlights.map((item) => (
+            {highlights.map((item, index) => (
               <div
                 key={item.title}
                 className={`group p-5 rounded-2xl bg-card border border-border ${borderMap[item.color]} transition-all hover:shadow-lg cursor-default`}
+                data-aos="fade-left"
+                data-aos-delay={180 + index * 90}
               >
                 <div className={`w-10 h-10 rounded-xl ${colorMap[item.color]} flex items-center justify-center mb-3`}>
                   <item.icon size={20} />

@@ -1,6 +1,7 @@
 import { Suspense, lazy } from "react";
 import HeroSection from "@/components/portfolio/HeroSection";
 import Navbar from "@/components/portfolio/Navbar";
+import ScrollToTopButton from "@/components/portfolio/ScrollToTopButton";
 
 const AboutSection = lazy(() => import("@/components/portfolio/AboutSection"));
 const SkillsSection = lazy(() => import("@/components/portfolio/SkillsSection"));
@@ -20,6 +21,7 @@ const Index = () => {
         <ContactSection />
         <Footer />
       </Suspense>
+      <ScrollToTopButton />
     </div>
   );
 };
